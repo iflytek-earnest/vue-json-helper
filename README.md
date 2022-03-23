@@ -155,6 +155,8 @@ export default {
 | json-str | 设置需要构建的string类型的json | String | 是 | - | - |
 | root-flag | 设置是否展示Root根节点 | Boolean | 否 | true/false | true |
 | open-flag | 设置是否展开全部节点 | Boolean | 否 | true/false | true |
+| border-flag | 设置是否展示边框 | Boolean | 否 | true/false | true |
+| shadow-flag | 设置是否展示边框阴影 | Boolean | 否 | true/false | false |
 | back-top-flag | 设置是否展示返回顶点的按钮 | Boolean | 否 | true/false | false |
 
 
