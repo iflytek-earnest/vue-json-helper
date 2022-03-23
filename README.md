@@ -70,6 +70,7 @@ import App from './App.vue';
 import ElementUI from 'element-ui';
 import VueJsonHelper from 'vue-json-helper'
 import 'element-ui/lib/theme-chalk/index.css';
+import 'vue-json-helper/vue-json-helper.css';
 
 Vue.use(ElementUI);
 Vue.use(VueJsonHelper)
