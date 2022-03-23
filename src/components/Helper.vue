@@ -1,5 +1,5 @@
 <template>
-  <el-row>
+  <el-row :class="borderFlag?'el-row-border':''" :style="shadowFlag?'box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)':''">
       <el-col v-if="isJson"  class="item-body">
         <Item
           :item="item"
@@ -13,7 +13,7 @@
         />
       </el-col>
       <el-col v-else>
-        <el-result icon="error" title="错误提示" subTitle="参数不正确！" />
+        <i>{{ errorResult }}</i>
       </el-col>
       <el-backtop v-if="backTopFlag"></el-backtop>
     </el-row>
@@ -31,6 +31,7 @@ export default {
       deep: 0,
       isJson: false,
       jsonData: undefined,
+      errorResult: undefined,
       item: {
         key: "Root",
         value: null,
@@ -58,6 +59,14 @@ export default {
     openFlag: {
       type: Boolean,
       default: true
+    },
+    borderFlag: {
+      type: Boolean,
+      default: true
+    },
+    shadowFlag: {
+      type: Boolean,
+      default: false
     },
     backTopFlag: {
       type: Boolean,
@@ -91,6 +100,7 @@ export default {
         this.jsonData = JSON.parse(this.jsonStr);
         flag = true;
       } catch (e) {
+        this.errorResult = e;
         flag = false;
       }
       return flag;
@@ -172,7 +182,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @import "element-ui/lib/theme-chalk/index.css";
 @media screen and (max-width: 700px) {
   .item-body {
@@ -183,5 +193,10 @@ export default {
 }
 .content {
   color: #888;
+}
+.el-row-border{
+  padding: 10px;
+  border: 1px solid #DCDFE6 ;
+  border-radius: 10px;
 }
 </style>
