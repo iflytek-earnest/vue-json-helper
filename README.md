@@ -150,7 +150,6 @@ export default {
 
 | 参数 | 备注 | 类型 | 必填 | 可选值 | 默认值 |
 | :-----| :---- | :---- | :---- | :---- | :---- |
-| size | 设置组件整体的大小 | String | 否 | mini/small/medium | small |
 | names | 设置组件的key对应的中文名称 | Array | 否 | - | - |
 | json-str | 设置需要构建的string类型的json | String | 是 | - | - |
 | root-flag | 设置是否展示Root根节点 | Boolean | 否 | true/false | true |
